@@ -92,7 +92,7 @@ public class LinesTest {
         answer.add("Two");
         answer.add("Three");
         Iterator<String> it = new Lines(Paths.get("src/test/resources/lines.txt"));
-        for (String line = it.next(); it.hasNext(); it.next()) {
+        for (String line = it.next(); line != null; line = it.next()) {
             assertEquals(answer.remove(0), line);
         }
         assertEquals(0, answer.size());
